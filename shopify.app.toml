@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ff5d0bc6b629d143559e676f8922b985"
+application_url = "https://waste-extension-mistress-trance.trycloudflare.com"
+embedded = true
+name = "frisco-post-purchase"
+handle = "frisco-post-purchase"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://waste-extension-mistress-trance.trycloudflare.com/auth/callback",
+  "https://waste-extension-mistress-trance.trycloudflare.com/auth/shopify/callback",
+  "https://waste-extension-mistress-trance.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "friscodevstore.myshopify.com"
+automatically_update_urls_on_dev = true
